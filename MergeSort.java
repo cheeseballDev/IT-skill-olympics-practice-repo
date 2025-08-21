@@ -3,7 +3,7 @@ import java.util.Arrays;
 
 public class MergeSort {
     public static void main(String[] args) {
-        int[] unsortedArray = {10, 6, 8, 5, 7, 3, 4};
+        int[] unsortedArray = {10, 6, 8, 5, 7, 3, 4, 42, 1, 500};
         int arrayLength = unsortedArray.length;
 
         
