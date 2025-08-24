@@ -1,38 +1,33 @@
+
+
 public class RotateAMatrix {
     public static void main(String[] args) {
         RotateAMatrix  rm = new RotateAMatrix();
-        rm.solve();
-    }
-
-    private void solve() {
-        int[][] arr = {
-            {1,2,3},
-            {4,5,6},
-            {7,8,9}
+        int[][] array = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
         };
+        rm.rotateCW(array);
+    }
 
-        System.out.println("Input: ");
-        for(int i = 0; i < arr.length; i++) {
-            for(int l = 0; l < arr[i].length; l++) {
-                System.out.print(arr[i][l]);
-            }
-            System.out.println();
-        }
-
-        System.out.println("Output: ");
-        int vertical = arr.length;
-        int horizontal = arr[0].length;
-        for(int i = 0; i < vertical; i++) {
-            for (int l = 0; l < horizontal; l++) {
-                arr[l][horizontal - 1 - i] = arr[i][l];
-            }
-        }
-        
-        for(int i = 0; i < arr.length; i++) {
-            for(int l = 0; l < arr[i].length; l++) {
-                System.out.print(arr[i][l]);
-            }
-            System.out.println();
+    private void rotateCW(int[][] mat) {
+    final int M = mat.length;
+    final int N = mat[0].length;
+    int[][] ret = new int[N][M];
+    for (int r = 0; r < M; r++) {
+        for (int c = 0; c < N; c++) {
+            ret[c][M-1-r] = mat[r][c];
         }
     }
+
+    for (int r = 0; r < M; r++) {
+        for (int c = 0; c < N; c++) {
+            System.out.print(ret[r][c] + " ");
+        }
+        System.out.println();
+    }
+    
+    
+}
 }
