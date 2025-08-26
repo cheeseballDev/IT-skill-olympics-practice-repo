@@ -14,19 +14,18 @@ public class AnagramChecker {
 
         int[] counts = new int[26];
 
-        for(Character c : word1.toCharArray()) {
-            counts[c - 'a']++;
-        }
+        for(Character c : word1.toCharArray()) 
+            if(Character.isLetter(c)) 
+                counts[c - 'a']++;
+        
 
-        for(Character c : word2.toCharArray()) {
-            counts[c - 'a']--;
-        }
+        for(Character c : word2.toCharArray()) 
+            if(Character.isLetter(c))
+                counts[c - 'a']--;
 
-        for(int i = 0; i < counts.length; i++) {
-            if(counts[i] != 0) {
+        for(int i = 0; i < counts.length; i++) 
+            if(counts[i] != 0)
                 return false;
-            }
-        }
 
         return true;
     }
