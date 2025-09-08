@@ -10,6 +10,15 @@ public class RotateAMatrix {
         };
         rm.rotateCW(array);
     }
+    // 7, 4, 1
+    // 8, 5, 2
+    // 9, 6, 3
+
+    // temp = 1st row = row -> col; 1st col = row - 1 - i
+    // (0, ), (0, ), (0, )
+    // 1st instance = 3 - 1 - 0 = 2
+    // 2nd instance = 3 - 1 - 1 = 1
+    // 3rd instance = 3 - 1 - 1 = 0
 
     private void rotateCW(int[][] mat) {
     final int M = mat.length;
