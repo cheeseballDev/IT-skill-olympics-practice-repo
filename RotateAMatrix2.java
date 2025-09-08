@@ -10,11 +10,13 @@ public class RotateAMatrix2 {
             {7,8,9}
         };
 
-        // 7, 4, 1
-        // 8, 5, 2
-        // 9, 6, 3
-
-        // 
+        // 3, 6, 9
+        // 2, 5, 8
+        // 1, 4, 7
+        
+        // 1 = 0,0 -> 2,0
+        // 2 = 0,1 -> 1,0
+        // 3 = 0,2 -> 0,0
 
         int arrRow = array.length;
         int arrCol = array[0].length;
@@ -22,8 +24,7 @@ public class RotateAMatrix2 {
 
         for(int i = 0; i < arrRow; i++) {
             for(int j = 0; j < arrCol; j++) {
-                temp[j][arrRow - 1 - i] = array[i][j];
-                
+                temp[arrCol - 1 - j][i] = array[i][j];
             }
         }
 
