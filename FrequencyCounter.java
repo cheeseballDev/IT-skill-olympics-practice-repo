@@ -1,5 +1,3 @@
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 public class FrequencyCounter {
@@ -14,15 +12,18 @@ public class FrequencyCounter {
         System.out.print("Please enter a word: ");
         String word = userInput.nextLine();
 
-        Map<Character, Integer> freq = new HashMap();
+        int[] letters = new int[26];
 
-        for(char c: word.toCharArray()) {
-            freq.put(c, freq.getOrDefault(c, 0) + 1);
+        for(char c : word.toLowerCase().toCharArray()) {
+            if(c >= 'a' && c <= 'z') {
+                letters[c - 'a']++;
+            }
         }
 
-        for(Map.Entry<Character, Integer> entry : freq.entrySet()) {
-            System.out.println(entry.getKey() + ": " + entry.getValue());
+        for(int i = 0; i < letters.length; i++) {
+            if(letters[i] > 0) {
+                System.out.println((char) (i + 'a') + ": " + letters[i]);
+            }
         }
-
     }
 }
