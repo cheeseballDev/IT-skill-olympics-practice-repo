@@ -13,13 +13,13 @@ public class SumAndAverage3 {
         String number = userInput.nextLine();
         int sum = 0;
         int count = 0;
-        int avg = 0;
+
         for(int i = 0; i < number.length(); i++) {
             sum += Character.getNumericValue(number.charAt(i));
             count++;
         }
 
-        avg = sum / count;
+        int avg = sum / count;
 
         System.out.println("The sum of all digits: " + sum);
         System.out.println("The average: " + avg);
