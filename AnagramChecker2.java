@@ -9,9 +9,9 @@ public class AnagramChecker2 {
     private String solve() {
         Scanner userInput = new Scanner(System.in);
         System.out.print("Enter first word: ");
-        String word1 = userInput.nextLine();
+        String word1 = userInput.nextLine().trim();
         System.out.print("Enter the second word: ");
-        String word2 = userInput.nextLine();
+        String word2 = userInput.nextLine().trim();
 
 
         int[] alphabets = new int[26];

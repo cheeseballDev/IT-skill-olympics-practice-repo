@@ -15,9 +15,7 @@ public class MultiplyMatrix {
             {2,2,2}
         };
 
-        int arrRow2 = array2.length;
         int arrCol2 = array2[0].length;
-
 
         int[][] result = new int[arrRow][arrCol];
 
