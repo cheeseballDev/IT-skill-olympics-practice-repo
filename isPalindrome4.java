@@ -15,7 +15,6 @@ public class isPalindrome4 {
         }
 
         String condition = word.equals(reversedWord) ? "Is palindrome" : "Not";
-
         System.out.println(condition);
 
     }
