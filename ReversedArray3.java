@@ -1,9 +1,9 @@
 
 import java.util.Scanner;
 
-public class ReverseArray3 {
+public class ReversedArray3 {
     public static void main(String[] args) {
-        ReverseArray3 ra = new ReverseArray3();
+        ReversedArray3 ra = new ReversedArray3();
         ra.solve();
     }
     

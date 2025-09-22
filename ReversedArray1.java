@@ -1,9 +1,9 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class ReversedArray {
+public class ReversedArray1 {
     public static void main(String[] args) {
-        ReversedArray rs = new ReversedArray();     
+        ReversedArray1 rs = new ReversedArray1();     
         rs.start();
     }
 
