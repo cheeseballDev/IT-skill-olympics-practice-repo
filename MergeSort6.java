@@ -1,23 +1,20 @@
 import java.util.Arrays;
 import java.util.Scanner;
-
-public class MergeSort5 {
+public class MergeSort6 {
     public static void main(String[] args) {
-        System.out.print("Please enter the length of array: ");
+        System.out.print("Enter amount of elements: ");
         Scanner userInput = new Scanner(System.in);
-        int[] array = new int[userInput.nextInt()];
-
-        int length = array.length;
-
-        for(int i = 0; i < length; i++) {
-            System.out.printf("Please enter the element for position %d: ", i);
+        int arrSize = userInput.nextInt();
+        int[] array = new int[arrSize];
+        for(int i = 0; i < arrSize; i++) {
+            System.out.printf("Enter element at position %d: ", i);
             array[i] = userInput.nextInt();
         }
-        System.out.println(Arrays.toString(merge(array, length)));
 
+        System.out.println(Arrays.toString(mergeSort(array, arrSize)));
     }
 
-    private static int[] merge(int[] array, int length) {
+    public static int[] mergeSort(int[] array, int length) {
         if(length < 2) {
             return array;
         }
@@ -32,19 +29,19 @@ public class MergeSort5 {
         }
 
         for(int i = middle; i < length; i++) {
-            rightArray[length - i] = array[i];
+            rightArray[i - middle] = array[i];
         }
 
 
-        merge(leftArray, middle);
-        merge(rightArray, length - middle);
-        
-        mergeSort(array, leftArray, rightArray, middle, length - middle);
+        mergeSort(leftArray, middle);
+        mergeSort(rightArray, length - middle);
 
+        merge(array, leftArray, rightArray, middle, length - middle);
+        
         return array;
     }
 
-    private static void mergeSort(int[] array, int[] leftArray, int[] rightArray, int left, int right) {
+    public static void merge(int[] array, int[] leftArray, int[] rightArray, int left, int right) {
         int i = 0, j = 0, k = 0;
 
         while(i < left && j < right) {
